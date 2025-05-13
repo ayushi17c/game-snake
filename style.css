@@ -1,0 +1,233 @@
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+ /* box-sizing: border-box;*/
+}
+
+/* General body styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background-image: url('bakgroundsnake.jpg');
+  background-size: cover; /* Ensure the image covers the entire screen */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  color:#fff;
+  height: 100%;
+  width: 100%;
+}
+header{
+  text-align:center;
+  font-size:2rem;
+  margin-bottom: 70px;
+  padding: 5px;
+  color: #ffffff;
+  text-shadow: 4px 4px 5px #000000;
+font-weight: bold;
+
+}
+
+/* Container styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ /* Center the content vertically */
+  height: 100%;
+  width: 100%;
+}
+
+/* Home screen styling */
+.home-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content at the top for the home screen */
+  background-color: #444;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 500px;
+  margin-top: 40px;
+  margin: 0px auto;
+  border: 5px solid #6fc78e;
+}
+
+.home-screen h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.home-screen input,
+.home-screen select,
+.home-screen button {
+  margin: 10px 0;
+  padding: 10px;
+  align-items: center;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.home-screen button {
+  background-color: #6fc78e;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home-screen button:hover {
+  background-color: #6fc78e;
+}
+
+/* Gaming screen styling */
+#gameScreen {
+  display: flex;
+  justify-content: center; /* Horizontally center the game area */
+  align-items: center; /* Vertically center the game area */
+  /*height: 100vh;  Full viewport height */
+  width: 100vw; /* Full viewport width */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Game container styling */
+.game-container {
+  display: flex;
+  flex-direction: row; /* Arrange canvas and sidebar horizontally */
+  align-items: center; /* Vertically center the canvas and sidebar */
+  justify-content: center; /* Horizontally center the canvas and sidebar */
+  gap: 80px; /* Add spacing between the canvas and sidebar */
+}
+
+/* Canvas styling */
+canvas {
+  display: block;
+  border: 2px solid #222;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  width: 600px; /* Match the new width */
+  height: 500px
+}
+/* Sidebar styling */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center items vertically in the sidebar */
+  gap: 10px; /* Add spacing between sidebar elements */
+}
+#scoreboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: 2px solid #6fc78e;
+  border-radius: 5px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#scoreboard span {
+  font-weight: bold;
+}
+
+/*#scoreboard {
+  background-color:#6fc78e;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 2.0rem;
+  color: #000;
+  text-align: center;
+  margin-bottom: 370px;
+  width: 150px;
+  height: 40px;
+}*/
+/* Button hover animation */
+button {
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+/* Fade-in animation for screens */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-screen,
+#gameOver {
+  animation: fadeIn 0.5s ease;
+}
+
+#pauseBtn {
+  padding: 10px 20px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  color: #fff;
+  font-size: 1.5rem;;
+  border: 2px solid #6fc78e;
+  border-radius: 5px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+#pauseBtn:hover {
+  background-color: #6fc78e;
+}
+
+/* Game over screen styling */
+.game-over {
+  display: none;
+  background-color: #444;
+  padding: 20px;
+  border: 2px solid #6fc78e;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.game-over h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.game-over button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #6fc78e;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.game-over button:hover {
+  background-color: #6fc78e;
+}

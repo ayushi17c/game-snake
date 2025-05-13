@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1 id="heading">🐍 Welcome to the Snake Game!</h1>
+  </header>
+  <div class="container">
+    <div class="home-screen">
+      <h1>🐍 Snake Game</h1>
+      <input type="text" id="playerName" placeholder="Enter your name" />
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+      <button onclick="startGame()">Start Game</button>
+      <p><strong>Highest Score:</strong> <span id="highScore">0</span></p>
+      <p><strong>Last Player:</strong> <span id="lastPlayer">-</span></p>
+    </div>
+    <div id="gameScreen" class="hidden">
+      <div class="game-container">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div class="sidebar">
+          <div id="scoreboard">
+            <p>Score: <span id="currentScore">0</span></p>
+          </div>
+          <button id="pauseBtn">Pause</button>
+        </div>
+      </div>
+    </div>
+    <div class="game-over" id="gameOver">
+      <h2>Game Over!</h2>
+      <p>Your Score: <span id="finalScore">0</span></p>
+      <button onclick="restartGame()">🔁 Play Again</button>
+      <button onclick="goBackHome()">🏠 Go Back</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
